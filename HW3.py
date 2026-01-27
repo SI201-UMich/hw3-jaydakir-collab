@@ -48,10 +48,8 @@ class CouponDispenser:
             str
         """
         # TODO: Implement per instructions
-        string = ""
-        for coupon in self.coupon_cards:
-            string += coupon + " | "
-        return string
+        delimiter = "|"
+        return delimiter.join(self.coupon_cards)
         pass
 
     def issue_coupon(self, name):
