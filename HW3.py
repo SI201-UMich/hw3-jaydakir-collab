@@ -33,6 +33,11 @@ class CouponDispenser:
             coupon_cards (list[str]): list of possible coupons users can receive.
         """
         # TODO: Implement per instructions
+        customer_roster = ""
+        issued_indices = 0
+        self.coupon_cards = coupon_cards
+        self.customer_roster = customer_roster 
+        self.issued_indices = issued_indices
         pass
 
     def __str__(self):
@@ -44,6 +49,10 @@ class CouponDispenser:
             str
         """
         # TODO: Implement per instructions
+        string = ""
+        for coupon in self.coupon_cards:
+            string += coupon + " | "
+        return string
         pass
 
     def issue_coupon(self, name):
@@ -61,6 +70,7 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
+        
         pass
 
     def distribute_session(self):
