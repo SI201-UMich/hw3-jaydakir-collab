@@ -33,11 +33,10 @@ class CouponDispenser:
             coupon_cards (list[str]): list of possible coupons users can receive.
         """
         # TODO: Implement per instructions
-        customer_roster = ""
-        issued_indices = 0
+        
         self.coupon_cards = coupon_cards
-        self.customer_roster = customer_roster 
-        self.issued_indices = issued_indices
+        self.customer_roster = []
+        self.issued_indices = []
         pass
 
     def __str__(self):
@@ -70,7 +69,12 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
-        
+        if self.name != "":
+            return self.name
+        if self.coupon_cards == "":
+            return "The box is empty"
+        else:
+            self.name = random.choice(self.coupon_cards)
         pass
 
     def distribute_session(self):
@@ -124,6 +128,7 @@ def main():
         "Buy 1 get 1 half off",
         "Free extra espresso shot",
     ]
+    test()
 
     # Uncomment the lines below as you implement each function.
     # box = CouponDispenser(coupon_cards)
