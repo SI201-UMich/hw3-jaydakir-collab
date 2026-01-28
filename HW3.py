@@ -1,6 +1,6 @@
-# Name:
-# Student ID:
-# Email:
+# Name: Jayda Kirkwood
+# Student ID: 4412 1294
+# Email: jaydakir@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
 # If you worked with generative AI also add a statement for how you used it.
 # I asked chat why i was failign these two test (coupon_cards list is properly defined and CouponDispenser is properly constructed) adn it helped me figured out it was the text before I called the functions. 
