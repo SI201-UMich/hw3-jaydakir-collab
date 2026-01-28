@@ -83,10 +83,7 @@ class CouponDispenser:
         self.issued_indices.append(random_index)
 
         return random_coupon
-            
-     
-        
-        pass
+       
 
     def distribute_session(self):
         """
@@ -104,6 +101,22 @@ class CouponDispenser:
         Reminder: Use lists only (no dictionaries).
         """
         # TODO: Implement per instructions 
+        round_number = 0
+        coupon = ""
+        user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
+        if user_input == "exit":
+            print("Goodbye!")
+        if user_input == "show":
+            for i in range(len(self.customer_roster)):
+                print(f"{self.customer_roster[i]}: {self.coupon_cards[self.issued_indices[i]]}\n")
+        else: 
+            pieces = user_input.text.split(",")
+            stripped_text = user_input.strip()
+            for piece in range(len(pieces)):
+                coupoun = self.issue_coupon(piece)
+                print(coupon)
+
+
         pass
 
     def tally_distribution(self):
@@ -142,9 +155,9 @@ def main():
     test()
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    box.tally_distribution()
     pass
 
 
