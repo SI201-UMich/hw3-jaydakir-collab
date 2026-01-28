@@ -74,7 +74,7 @@ class CouponDispenser:
         
         for names in range(len(self.customer_roster)):
             if name == self.customer_roster[names]:
-                return f"That name already has a coupon: {self.issued_indices[names]}"
+                return f"That name already has a coupon: {self.coupon_cards[self.issued_indices[names]]}"
         
         random_coupon = random.choice(self.coupon_cards)
         random_index = self.coupon_cards.index(random_coupon)
@@ -84,7 +84,6 @@ class CouponDispenser:
 
         return random_coupon
             
-        
      
         
         pass
