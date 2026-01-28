@@ -119,6 +119,7 @@ class CouponDispenser:
                     stripped_text = piece.strip()
                     if stripped_text != "":
                         result = self.issue_coupon(stripped_text)
+                        print(f"{piece}: {result}")
 
             round_number += 1
 
@@ -158,7 +159,7 @@ def main():
         "Buy 1 get 1 half off",
         "Free extra espresso shot",
     ]
-    #test()
+    test()
 
     # Uncomment the lines below as you implement each function.
     box = CouponDispenser(coupon_cards)
