@@ -103,9 +103,10 @@ class CouponDispenser:
         # TODO: Implement per instructions 
         round_number = 1
         coupon = ""
-        user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
         
-        while True: 
+        while True:
+            user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
+ 
             if user_input == "exit":
                 print("Goodbye!")
                 break
@@ -116,10 +117,8 @@ class CouponDispenser:
                 pieces = user_input.split(",")
                 for piece in pieces:
                     stripped_text = piece.strip()
-                    coupoun = self.issue_coupon(piece)
                     if stripped_text != "":
                         result = self.issue_coupon(stripped_text)
-                        print(result)
 
             round_number += 1
 
