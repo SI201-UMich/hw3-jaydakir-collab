@@ -37,7 +37,7 @@ class CouponDispenser:
         self.coupon_cards = coupon_cards
         self.customer_roster = []
         self.issued_indices = []
-        pass
+        
 
     def __str__(self):
         """
@@ -50,7 +50,7 @@ class CouponDispenser:
         # TODO: Implement per instructions
         delimiter = "|"
         return delimiter.join(self.coupon_cards)
-        pass
+        
 
     def issue_coupon(self, name):
         """
@@ -67,12 +67,26 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
-        if self.name != "":
-            return self.name
-        if self.coupon_cards == "":
-            return "The box is empty"
-        else:
-            self.name = random.choice(self.coupon_cards)
+        self.name = name      
+
+        if self.coupon_cards == []:
+            return "The box is empty."
+        
+        for names in range(len(self.customer_roster)):
+            if name == self.customer_roster[names]:
+                return f"That name already has a coupon: {self.issued_indices[names]}"
+        
+        random_coupon = random.choice(self.coupon_cards)
+        random_index = self.coupon_cards.index(random_coupon)
+
+        self.customer_roster.append(name)
+        self.issued_indices.append(random_index)
+
+        return random_coupon
+            
+        
+     
+        
         pass
 
     def distribute_session(self):
